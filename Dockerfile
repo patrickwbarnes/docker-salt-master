@@ -2,7 +2,9 @@ FROM fedora:latest
 
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-RUN dnf -y install salt-master \
+RUN dnf -y install \
+  find \
+  salt-master \
  && dnf clean all
 
 COPY entrypoint.sh /entrypoint.sh
